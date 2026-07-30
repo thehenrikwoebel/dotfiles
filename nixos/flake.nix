@@ -4,25 +4,28 @@
     zscroll-src = {
       url = "github:noctuid/zscroll";
       flake = false;
-    }; 
+    };
     nmrs = {
       url = "github:networkmanager-rs/nmrs-gui";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, zscroll-src, nmrs, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, zscroll-src, nmrs, ... }: 
+    let
       system = "x86_64-linux";
-      specialArgs = { inherit zscroll-src; };
-      modules = [
-        ./configuration.nix
-	{
-		environment.systemPackages = [
-			nmrs.packages.${pkgs.stdenv.hostPlatform.system}.default
-		];
-	}
-      ];
+    in {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit zscroll-src nmrs; };
+        modules = [
+          ./configuration.nix
+          ({ pkgs, ... }: {
+            environment.systemPackages = [
+              nmrs.packages.${system}.default
+            ];
+          })
+        ];
+      };
     };
-  };
 }
