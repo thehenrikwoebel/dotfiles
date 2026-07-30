@@ -18,7 +18,24 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "zscroll-src": "zscroll-src"
+      }
+    },
+    "zscroll-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1715432272,
+        "narHash": "sha256-j9drC3BtQUSHlQf7FWIXBy2PUlPOwBu1sL3JR0nmHzM=",
+        "owner": "noctuid",
+        "repo": "zscroll",
+        "rev": "35c50faae2787e13649146bad216e1f6444f13b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctuid",
+        "repo": "zscroll",
+        "type": "github"
       }
     }
   },
