@@ -20,7 +20,7 @@
   boot.loader.efi.efiSysMountPoint = "/boot";
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -28,6 +28,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -55,6 +57,20 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  # Shell
+  programs.zsh = {
+  enable = true;
+  autosuggestions.enable = true;
+  syntaxHighlighting.enable = true;
+  ohMyZsh = {
+    enable = true;
+    theme = "robbyrussell";
+    plugins = [ 
+      	"git" 
+      	"common-aliases" 
+      ];
+    };
+  };
   # Hyprland
   programs.hyprland = {
     enable = true;
@@ -113,9 +129,9 @@
     isNormalUser = true;
     description = "Henrik Wöbel";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
     ];
   };
 
@@ -160,6 +176,12 @@
 	hyprshot
 	imv
 	stow
+	bluetui
+	htop
+	neovim
+	oh-my-zsh
+	zsh-syntax-highlighting
+  	zsh-autosuggestions
   ];
 
   fonts.packages = with pkgs; [
