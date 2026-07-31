@@ -22,6 +22,7 @@
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+-- notebook display
 hl.monitor({
     output   = "",
     mode     = "preferred",
@@ -29,6 +30,13 @@ hl.monitor({
     scale    = 1.0,
 })
 
+-- hp monitor (left)
+hl.monitor({
+  output = "HDMI-A-1",
+  mode = "2560x1440@144.00Hz",
+  position = "auto",
+  scale = 1,
+})
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -231,7 +239,7 @@ hl.config({
 
         follow_mouse = 1,
 
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = -0.8, -- -1.0 - 1.0, 0 means no modification.
 
         touchpad = {
             natural_scroll = true,
