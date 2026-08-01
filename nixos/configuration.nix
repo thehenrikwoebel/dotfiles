@@ -31,6 +31,9 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  # ssh agent 
+  programs.ssh.startAgent = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
@@ -196,6 +199,35 @@
 	dates = "weekly";
 	options = "--delete-older-than-30d";
   };
+
+  # Git
+  programs.git = {
+  enable = true;
+  config = {
+    user = {
+      name = "Henrik Wöbel";
+      email = "henrik.woebel@gmail.com";
+    };
+    
+    init.defaultBranch = "dev";
+    
+    pull.rebase = true;
+    
+    core.editor = "nvim";
+    
+    color.ui = true;
+    
+    push.autoSetupRemote = true;
+    
+    alias = {
+      st = "status";
+      co = "checkout";
+      br = "branch";
+      cm = "commit -m";
+      lg = "log --oneline --graph --decorate";
+    };
+  };
+};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
