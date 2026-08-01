@@ -102,6 +102,16 @@
     };
   };
 }; 
+
+  services.keyd.keyboards.corsair-mouse = {
+  ids = [ "1b7e:1b1c" ];
+  settings = {
+    main = {
+      "4" = "back";
+      "3" = "forward";
+    };
+  };
+};
   # Configure console keymap
   console.keyMap = "de";
 
@@ -186,6 +196,7 @@
 	zsh-syntax-highlighting
   	zsh-autosuggestions
 	yazi
+	evtest
   ];
 
   fonts.packages = with pkgs; [
