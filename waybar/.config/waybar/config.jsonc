@@ -6,7 +6,7 @@
     "hyprland/submap",
     "group/volume",
     "battery",
-    "custom/power-profile",
+    "power-profiles-daemon",
     "bluetooth",
     "network",
     "cpu",
@@ -15,12 +15,16 @@
   "hyprland/window": {
     "max-length": 50
   },
-  "custom/power-profile": {
-    "exec": "/home/henrik/.config/waybar/custom_modules/power-profile.sh",
-    "return-type": "json",
-    "interval": 5,
-    "on-click": "/home/henrik/.config/waybar/custom_modules/toggle-power-profile.sh",
-    "format": "{}"
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "{profile}",
+    "tooltip": true,
+    "format-icons": {
+        "default": "",
+        "performance": "󰓅",
+        "balanced": "",
+        "power-saver": "󰌪"
+    }
   },
   "battery": {
     "interval": 60,

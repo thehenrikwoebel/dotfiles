@@ -36,7 +36,7 @@ window#waybar {
 #network,
 #cpu,
 #memory,
-#custom-power-profile,
+#power-profiles-daemon, 
 #volume {
   border-radius: 8px;
   padding: 5px 6px;
@@ -55,21 +55,17 @@ window#waybar {
   border-color: @highlight;
 }
 
-#custom-power-profile.power-saver {
-    border-color: #a6e3a1;
+#power-profiles-daemon {
 }
 
-#custom-power-profile.balanced {
-    border-color: #f9e2af;
-}
-
-#custom-power-profile.performance {
+#power-profiles-daemon.performance {
     border-color: #f38ba8;
 }
-
-#custom-power-profile {
-    padding-right: 0;
-    margin-right: 0;
+#power-profiles-daemon.balanced {
+    border-color: #f9e2af;
+}
+#power-profiles-daemon.power-saver {
+    border-color: #a6e3a1;
 }
 
 #battery {
