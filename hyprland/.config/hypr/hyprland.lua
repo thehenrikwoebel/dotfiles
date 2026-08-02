@@ -265,7 +265,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))    -- dwindle only
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -315,8 +315,9 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 -- Hyprshot
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m window"))
 
--- Firefox
+-- custom shortcuts
 hl.bind(mainMod .. " + f", hl.dsp.exec_cmd("firefox"))
+hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("thunderbird"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
