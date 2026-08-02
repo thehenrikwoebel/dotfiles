@@ -37,6 +37,9 @@
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
+  # dark mode
+  programs.dconf.enable = true;
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -97,6 +100,7 @@
         "9" = "G-9";
         "0" = "G-0";
         "q" = "G-q";
+	"minus" = "G-minus";
         "rightbrace" = "G-rightbrace";
       };
     };
