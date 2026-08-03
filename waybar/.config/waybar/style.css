@@ -56,6 +56,9 @@ window#waybar {
 }
 
 #power-profiles-daemon {
+    min-width: 22px;
+    font-size: 16px;
+    padding: 5 6px;
 }
 
 #power-profiles-daemon.performance {
