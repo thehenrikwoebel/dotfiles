@@ -37,6 +37,8 @@
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # dark mode
   programs.dconf.enable = true;
 
