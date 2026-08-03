@@ -201,6 +201,9 @@
   	zsh-autosuggestions
 	yazi
 	evtest
+	eza
+	zoxide
+	fzf
   ];
 
   fonts.packages = with pkgs; [
