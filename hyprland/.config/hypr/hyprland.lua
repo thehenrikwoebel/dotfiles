@@ -241,13 +241,8 @@ hl.gesture({
     action = "workspace"
 })
 
--- Example per-device config
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
-hl.device({
-    name        = "epic-mouse-v1",
-    sensitivity = -0.5,
-})
-
+-- mouse sensitivity
+hl.config({ input = { sensitivity = -0.6, accel_profile = "flat" } })
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -318,6 +313,7 @@ hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m window"))
 -- custom shortcuts
 hl.bind(mainMod .. " + f", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("thunderbird"))
+hl.bind(mainMod .. " + b", hl.dsp.exec_cmd("exec kitty --title=bluetui -e bluetui"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
