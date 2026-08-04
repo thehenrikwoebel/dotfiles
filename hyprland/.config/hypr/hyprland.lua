@@ -255,7 +255,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " -e yazi"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("exec kitty -e yazi"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -323,7 +323,7 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m window"))
 
 -- custom shortcuts
-hl.bind(mainMod .. " + f", hl.dsp.exec_cmd("firefox"))
+hl.bind(mainMod .. " + f", hl.dsp.exec_cmd("zen-beta"))
 hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("thunderbird"))
 hl.bind(mainMod .. " + b", hl.dsp.exec_cmd("exec kitty --title=bluetui -e bluetui"))
 
