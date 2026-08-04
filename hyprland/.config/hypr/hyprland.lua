@@ -259,7 +259,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " -e yazi"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+--hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 
 -- Move focus with mainMod + arrow keys
@@ -273,6 +273,18 @@ hl.bind(mainMod .. " + SHIFT + Left",  hl.dsp.window.move({ direction = "l" }))
 hl.bind(mainMod .. " + SHIFT + Right", hl.dsp.window.move({ direction = "r" }))
 hl.bind(mainMod .. " + SHIFT + Up",    hl.dsp.window.move({ direction = "u" }))
 hl.bind(mainMod .. " + SHIFT + Down",  hl.dsp.window.move({ direction = "d" }))
+
+-- move windows with vim motions
+hl.bind(mainMod .. " + SHIFT + h",  hl.dsp.window.move({ direction = "l" }))
+hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mainMod .. " + SHIFT + k",    hl.dsp.window.move({ direction = "u" }))
+hl.bind(mainMod .. " + SHIFT + j",  hl.dsp.window.move({ direction = "d" }))
+
+-- move focus with vim motions 
+hl.bind(mainMod .. " + h",  hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + k",    hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + j",  hl.dsp.focus({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
