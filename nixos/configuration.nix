@@ -41,7 +41,14 @@
 
   # dark mode
   programs.dconf.enable = true;
+  environment.sessionVariables = {
+    GTK_THEME = "Adwaita:dark";
+    XDG_DATA_DIRS = [
+      "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}"
+    ];
+  };
 
+  
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -193,7 +200,6 @@
 	python3Packages.setuptools
 	ghostty
 	hyprshot
-	imv
 	stow
 	bluetui
 	htop
@@ -206,6 +212,11 @@
 	eza
 	zoxide
 	fzf
+	swappy
+	gnome-themes-extra
+	dconf
+	gsettings-desktop-schemas
+	glib
   ];
 
   fonts.packages = with pkgs; [

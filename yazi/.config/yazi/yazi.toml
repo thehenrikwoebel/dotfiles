@@ -1,0 +1,12 @@
+[opener]
+image = [
+    { run = 'swappy -f "$1"', desc = "Open with Swappy" },
+]
+
+[[open.prepend_rules]]
+mime = "image/png"
+use = "image"
+
+[[open.prepend_rules]]
+mime = "image/*"
+use = "image"
