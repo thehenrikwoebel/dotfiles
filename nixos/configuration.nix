@@ -217,6 +217,8 @@
 	dconf
 	gsettings-desktop-schemas
 	glib
+	wl-clipboard
+	wofi-emoji
   ];
 
   fonts.packages = with pkgs; [
