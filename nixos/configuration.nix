@@ -219,6 +219,7 @@
 	glib
 	wl-clipboard
 	wofi-emoji
+	spotify
   ];
 
   fonts.packages = with pkgs; [
