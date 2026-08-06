@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "group/media"],
   "modules-center": ["clock"],
   "modules-right": [
     "hyprland/submap",
