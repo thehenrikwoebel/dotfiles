@@ -221,6 +221,7 @@
 	wofi-emoji
 	spotify
 	devenv
+	direnv
   ];
 
   fonts.packages = with pkgs; [

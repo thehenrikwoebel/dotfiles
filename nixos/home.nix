@@ -20,4 +20,17 @@
       aaron-bond.better-comments
     ];
   };
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    
+    stdlib = ''
+      use_devenv() {
+        watch_file devenv.nix
+        watch_file devenv.yaml
+        watch_file devenv.lock
+        eval "$(devenv print-dev-env)"
+      }
+    '';
+  };
 }
