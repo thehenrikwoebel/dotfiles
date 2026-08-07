@@ -17,6 +17,7 @@
       ms-python.python
       ms-azuretools.vscode-docker
       vscodevim.vim
+      aaron-bond.better-comments
     ];
   };
 }
