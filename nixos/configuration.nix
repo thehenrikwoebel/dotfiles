@@ -220,6 +220,7 @@
 	wl-clipboard
 	wofi-emoji
 	spotify
+	devenv
   ];
 
   fonts.packages = with pkgs; [
