@@ -222,6 +222,7 @@
 	spotify
 	devenv
 	direnv
+	librespeed-cli
   ];
 
   fonts.packages = with pkgs; [
