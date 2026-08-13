@@ -223,6 +223,7 @@
 	devenv
 	direnv
 	librespeed-cli
+	ungoogled-chromium
   ];
 
   fonts.packages = with pkgs; [

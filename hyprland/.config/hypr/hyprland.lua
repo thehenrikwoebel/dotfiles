@@ -326,6 +326,7 @@ hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind(mainMod .. " + f", hl.dsp.exec_cmd("zen-beta"))
 hl.bind(mainMod .. " + t", hl.dsp.exec_cmd("thunderbird"))
 hl.bind(mainMod .. " + o", hl.dsp.exec_cmd("spotify"))
+hl.bind(mainMod .. " + g", hl.dsp.exec_cmd("chromium"))
 hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("wofi-emoji"))
 hl.bind(mainMod .. " + b", hl.dsp.exec_cmd("exec kitty --title=bluetui -e bluetui"))
 
