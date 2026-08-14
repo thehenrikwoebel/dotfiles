@@ -190,6 +190,7 @@
 	awww
 	hyprpaper
 	hyprlock
+	wlogout
 	networkmanagerapplet
 	hyprlauncher
 	font-awesome
