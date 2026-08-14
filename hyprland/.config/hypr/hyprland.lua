@@ -329,6 +329,7 @@ hl.bind(mainMod .. " + o", hl.dsp.exec_cmd("spotify"))
 hl.bind(mainMod .. " + g", hl.dsp.exec_cmd("chromium"))
 hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("wofi-emoji"))
 hl.bind(mainMod .. " + b", hl.dsp.exec_cmd("exec kitty --title=bluetui -e bluetui"))
+hl.bind(mainMod .. " + CONTROL + l", hl.dsp.exec_cmd("hyprlock"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----

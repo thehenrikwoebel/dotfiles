@@ -189,6 +189,7 @@
 	rofi
 	awww
 	hyprpaper
+	hyprlock
 	networkmanagerapplet
 	hyprlauncher
 	font-awesome
