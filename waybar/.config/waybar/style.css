@@ -36,6 +36,7 @@ window#waybar {
 #network,
 #cpu,
 #memory,
+#custom-menu,
 #power-profiles-daemon, 
 #volume {
   border-radius: 8px;
@@ -51,6 +52,7 @@ window#waybar {
 #network:hover,
 #cpu:hover,
 #memory:hover,
+#custom-menu:hover,
 #volume:hover {
   border-color: @highlight;
 }

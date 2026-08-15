@@ -10,7 +10,8 @@
     "bluetooth",
     "network",
     "cpu",
-    "memory"
+    "memory",
+    "custom/menu"
   ],
   "hyprland/window": {
     "max-length": 50
@@ -146,6 +147,10 @@
       "escape": true,
       "interval": 1,
       "tooltip": false
+    },
+    "custom/menu": {
+	"format": "",
+	"on-click": "wlogout --buttons-per-row 2"
     }
 }
 
