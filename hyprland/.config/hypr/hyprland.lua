@@ -49,6 +49,7 @@ local menu        = "rofi -show drun"
    hl.exec_cmd("nm-applet")
    hl.exec_cmd("waybar & hyprpaper")
    hl.exec_cmd("playerctld daemon")
+   hl.exec_cmd("hyprlock")
  end)
 
 -------------------------------
