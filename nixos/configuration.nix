@@ -11,6 +11,27 @@
       ./modules/zscroll.nix
     ];
 
+   services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        user = "greeter";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-user-session --asterisks --cmd \"uwsm start hyprland-uwsm.desktop\" --sessions ${config.services.displayManager.sessionData.desktops}/share/xsessions:${config.services.displayManager.sessionData.desktops}/share/wayland-sessions";
+      };
+    };
+  }; 
+
+# Wichtig: Falls du Hyprland oder Wayland nutzt, stellt das sicher, dass Tuigreet Zugriff auf die TTY/Grafik hat
+systemd.services.greetd.serviceConfig = {
+  Type = "idle";
+  StandardInput = "tty";
+  StandardOutput = "tty";
+  StandardError = "journal";
+  TTYReset = true;
+  TTYHangup = true;
+  TTYVTDisallocate = true;
+};
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
@@ -69,13 +90,15 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = false;
   services.desktopManager.plasma6.enable = true;
   services.displayManager.defaultSession = "hyprland";
   services.displayManager.autoLogin = {
     enable = true;
     user = "henrik";
   };
+  #generate apropos db
+  documentation.man.generateCaches = true;
 
   # Shell
   programs.zsh = {
@@ -95,6 +118,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true; #x11 support
+    withUWSM = true;
   };
 
   # Configure keymap in X11
@@ -231,6 +255,8 @@
 	direnv
 	librespeed-cli
 	ungoogled-chromium
+	kdePackages.dolphin
+	tuigreet
   ];
 
   fonts.packages = with pkgs; [
