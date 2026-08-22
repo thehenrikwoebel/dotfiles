@@ -236,6 +236,11 @@ hl.config({
     },
 })
 
+hl.device({
+    name = "elan06c9:00-04f3:320b-touchpad",
+    sensitivity = 0.5
+})
+
 hl.gesture({
     fingers = 3,
     direction = "horizontal",
