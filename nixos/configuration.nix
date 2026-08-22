@@ -257,6 +257,8 @@ systemd.services.greetd.serviceConfig = {
 	ungoogled-chromium
 	kdePackages.dolphin
 	tuigreet
+	cmatrix
+	lavat
   ];
 
   fonts.packages = with pkgs; [
