@@ -219,6 +219,7 @@ systemd.services.greetd.serviceConfig = {
 	awww
 	hyprpaper
 	hyprlock
+	hypridle
 	wlogout
 	networkmanagerapplet
 	hyprlauncher
