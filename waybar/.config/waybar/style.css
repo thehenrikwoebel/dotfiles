@@ -1,5 +1,9 @@
 @define-color highlight rgba(117, 241, 250, 1);
+@define-color red #f38ba8;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
 @define-color dark-9 rgba(24, 24, 27, 1);
+@define-color dark-transparent rgba(24, 24, 27, 0.8);
 @define-color dark-8 rgba(39, 39, 42, 1);
 @define-color dark-7 rgba(63, 63, 70, 1);
 @define-color dark-6 rgba(82, 82, 91, 1);
@@ -12,8 +16,23 @@
 }
 
 window#waybar {
-  background-color: @dark-9;
+  background-color: transparent;
   color: white;
+}
+
+.modules-right, .modules-left, .modules-center {
+  background-color: @dark-9;
+  border-radius: 10px;
+  padding: 0px 7px;
+  margin-top: 3px;
+}
+
+.modules-left {
+  margin-left: 10px;
+}
+
+.modules-right {
+  margin-right: 10px;
 }
 
 #workspaces button {
@@ -57,6 +76,14 @@ window#waybar {
   border-color: @highlight;
 }
 
+#battery.warning {
+    border-color: @yellow;
+}
+
+#battery.critical {
+    border-color: @red;
+}
+
 #power-profiles-daemon {
     min-width: 22px;
     font-size: 16px;
@@ -64,13 +91,13 @@ window#waybar {
 }
 
 #power-profiles-daemon.performance {
-    border-color: #f38ba8;
+    border-color: @red;
 }
 #power-profiles-daemon.balanced {
-    border-color: #f9e2af;
+    border-color: @yellow;
 }
 #power-profiles-daemon.power-saver {
-    border-color: #a6e3a1;
+    border-color: @green;
 }
 
 #battery {

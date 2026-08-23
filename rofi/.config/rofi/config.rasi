@@ -12,7 +12,7 @@
     alt-color: #111111FF;
     wbg-color: #000000CC;
     w-border: 2px solid;
-    w-border-color: #FFFFFFFF;
+    w-border-color: rgba(117, 241, 250, 1);
     w-padding: 12px;
 }
 
