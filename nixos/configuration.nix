@@ -260,6 +260,7 @@ systemd.services.greetd.serviceConfig = {
 	tuigreet
 	cmatrix
 	lavat
+	openvpn
   ];
 
   fonts.packages = with pkgs; [
