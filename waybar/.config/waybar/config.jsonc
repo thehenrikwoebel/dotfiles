@@ -58,6 +58,10 @@
         "󰂅"
       ]
     },
+    "states": {
+	"warning": 30,
+	"critical": 15
+    },
     "on-click": "~/.config/waybar/custom_modules/toggle-power-profile.sh"
   },
   "bluetooth": {
@@ -94,14 +98,14 @@
     "on-click": "exec nmrs-gui"
   },
   "clock": {
-    "format": "󰥔  {:%a %H:%M}",
+    "format": "{:%a %H:%M}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "format": {
         "today": "<span color='#75f1fa'><b>{}</b></span>"
       }
     },
-    "on-click": "exec firefox --app=https://calendar.google.com"
+    "on-click": "exec chromium --app=https://calendar.google.com"
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
@@ -150,7 +154,9 @@
     },
     "custom/menu": {
 	"format": "",
-	"on-click": "wlogout --buttons-per-row 2"
+	"on-click": "wlogout --buttons-per-row 2",
+	"tooltip": true,
+	"tooltip-format": "Menu"
     }
 }
 

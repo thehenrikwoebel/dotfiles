@@ -69,7 +69,6 @@ systemd.services.greetd.serviceConfig = {
     ];
   };
 
-  
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -261,6 +260,10 @@ systemd.services.greetd.serviceConfig = {
 	cmatrix
 	lavat
 	openvpn
+	(writeShellScriptBin "vpn" ''
+	cd ~/thowl
+	sudo openvpn --config ~/thowl/stud.th-owl.de_3.ovpn
+	'')
   ];
 
   fonts.packages = with pkgs; [
