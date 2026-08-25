@@ -153,6 +153,18 @@ systemd.services.greetd.serviceConfig = {
     };
   };
 };
+  
+  hardware.graphics = {
+  	enable = true;
+  	enable32Bit = true;
+  };
+
+  programs.steam = {
+  	enable = true;
+  	remotePlay.openFirewall = true;
+  	dedicatedServer.openFirewall = true;
+  };
+
   # Configure console keymap
   console.keyMap = "de";
 
@@ -260,6 +272,9 @@ systemd.services.greetd.serviceConfig = {
 	cmatrix
 	lavat
 	openvpn
+	geogebra
+	remnote
+	steam
 	(writeShellScriptBin "vpn" ''
 	cd ~/thowl
 	sudo openvpn --config ~/thowl/stud.th-owl.de_3.ovpn
