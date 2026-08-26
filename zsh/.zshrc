@@ -6,3 +6,4 @@ eval "$(zoxide init zsh)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 eval "$(direnv hook zsh)"
+hyprctl splash | cowsay -f stegosaurus | lolcat

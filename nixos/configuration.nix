@@ -272,6 +272,8 @@ systemd.services.greetd.serviceConfig = {
 	cmatrix
 	lavat
 	openvpn
+	cowsay
+	lolcat
 	geogebra
 	remnote
 	steam
