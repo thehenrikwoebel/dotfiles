@@ -16,12 +16,11 @@
     settings = {
       default_session = {
         user = "greeter";
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-user-session --asterisks --cmd \"uwsm start hyprland-uwsm.desktop\" --sessions ${config.services.displayManager.sessionData.desktops}/share/xsessions:${config.services.displayManager.sessionData.desktops}/share/wayland-sessions";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-user-session --asterisks --theme \"border=cyan;container=black;text=white\" --cmd \"uwsm start hyprland-uwsm.desktop\" --sessions ${config.services.displayManager.sessionData.desktops}/share/xsessions:${config.services.displayManager.sessionData.desktops}/share/wayland-sessions";
       };
     };
   }; 
 
-# Wichtig: Falls du Hyprland oder Wayland nutzt, stellt das sicher, dass Tuigreet Zugriff auf die TTY/Grafik hat
 systemd.services.greetd.serviceConfig = {
   Type = "idle";
   StandardInput = "tty";
