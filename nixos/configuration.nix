@@ -263,6 +263,8 @@ systemd.services.greetd.serviceConfig = {
 	gsettings-desktop-schemas
 	glib
 	wl-clipboard
+	cliphist
+	wtype
 	wofi-emoji
 	spotify
 	devenv

@@ -50,6 +50,8 @@ local menu        = "rofi -show drun"
    hl.exec_cmd("waybar & hyprpaper")
    hl.exec_cmd("playerctld daemon")
    hl.exec_cmd("systemctl --user enable --now hypridle.service")
+   hl.exec_cmd("wl-paste --type text --watch cliphist store")
+   hl.exec_cmd("wl-paste --type image --watch cliphist store")
  end)
 
 -------------------------------
@@ -263,7 +265,8 @@ local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 --hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("wlogout --buttons-per-row 2"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("exec kitty -e yazi"))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+--hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -config ~/.config/rofi/config.rasi | cliphist decode | wl-copy && wtype -M ctrl -M shift -k v -m shift -m ctrl"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 --hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
