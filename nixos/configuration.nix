@@ -41,7 +41,7 @@ systemd.services.greetd.serviceConfig = {
   boot.loader.efi.efiSysMountPoint = "/boot";
 
   networking.hostName = "nixos"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -51,6 +51,8 @@ systemd.services.greetd.serviceConfig = {
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+
+  boot.kernelModules = ["rtw89_8852ce"];
 
   # ssh agent 
   programs.ssh.startAgent = true;
