@@ -280,6 +280,7 @@ systemd.services.greetd.serviceConfig = {
 	geogebra
 	remnote
 	steam
+	gcc
 	(writeShellScriptBin "vpn" ''
 	cd ~/thowl
 	sudo openvpn --config ~/thowl/stud.th-owl.de_3.ovpn
