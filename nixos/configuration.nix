@@ -271,6 +271,7 @@ systemd.services.greetd.serviceConfig = {
 	librespeed-cli
 	ungoogled-chromium
 	kdePackages.dolphin
+	gnumake
 	tuigreet
 	cmatrix
 	lavat
