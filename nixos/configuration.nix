@@ -285,6 +285,20 @@ systemd.services.greetd.serviceConfig = {
 	cd ~/thowl
 	sudo openvpn --config ~/thowl/stud.th-owl.de_3.ovpn
 	'')
+	#dolphin
+	kdePackages.dolphin
+    	kdePackages.dolphin-plugins  
+    	kdePackages.kdegraphics-thumbnailers
+    	kdePackages.kio-extras        
+    	kdePackages.ffmpegthumbs      
+    	kdePackages.ark               
+    	kdePackages.systemsettings    
+    	kdePackages.breeze            
+    	kdePackages.qqc2-desktop-style
+    	libsForQt5.qt5ct              
+    	kdePackages.qt6ct             
+	kdePackages.knewstuff
+	kdePackages.kirigami
   ];
 
   fonts.packages = with pkgs; [
@@ -327,6 +341,36 @@ systemd.services.greetd.serviceConfig = {
     };
   };
 };
+
+  xdg = {
+    mime.enable = true;
+    menus.enable = true;
+    portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.kdePackages.xdg-desktop-portal-kde ];
+    };
+  };
+
+  environment.etc."xdg/menus/applications.menu".source =
+    "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+
+  security.polkit.enable = true;
+  systemd.user.services.polkit-kde-authentication-agent-1 = {
+    description = "polkit-kde-authentication-agent-1";
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
+
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

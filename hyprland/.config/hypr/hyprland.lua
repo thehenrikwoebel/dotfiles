@@ -1,4 +1,4 @@
-------------------
+-----------------
 ---- MONITORS ----
 ------------------
 
@@ -52,6 +52,7 @@ local menu        = "rofi -show drun"
    hl.exec_cmd("systemctl --user enable --now hypridle.service")
    hl.exec_cmd("wl-paste --type text --watch cliphist store")
    hl.exec_cmd("wl-paste --type image --watch cliphist store")
+   hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
  end)
 
 -------------------------------
@@ -390,4 +391,34 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
+})
+
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("QT_QPA_PLATFORMTHEME", "kde")
+hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
+hl.env("XDG_MENU_PREFIX", "plasma-")
+
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+
+hl.window_rule({
+    match = { 
+        class = "^(org%.kde%.dolphin)$", 
+        title = "^(Progress Dialog — Dolphin)$" 
+    },
+    float = true
+})
+
+hl.window_rule({
+    match = { 
+        class = "^(org%.kde%.dolphin)$", 
+        title = "^(Copying — Dolphin)$" 
+    },
+    float = true
+})
+
+hl.window_rule({
+    match = { class = "^(org%.kde%.ark)$" },
+    float = true
 })
