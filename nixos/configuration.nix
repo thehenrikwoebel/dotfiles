@@ -29,7 +29,11 @@ systemd.services.greetd.serviceConfig = {
   TTYReset = true;
   TTYHangup = true;
   TTYVTDisallocate = true;
-};
+  };
+
+  #tailscale
+  services.tailscale.enable = true;
+  networking.firewall.trustedInterfaces = [ "tailscale0" ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -217,6 +221,8 @@ systemd.services.greetd.serviceConfig = {
 	kitty
 	firefox
 	git
+	unzip
+	curl
 	docker
 	lazydocker
 	thunderbird
@@ -271,6 +277,7 @@ systemd.services.greetd.serviceConfig = {
 	librespeed-cli
 	ungoogled-chromium
 	kdePackages.dolphin
+	tree-sitter
 	gnumake
 	tuigreet
 	cmatrix
@@ -300,6 +307,7 @@ systemd.services.greetd.serviceConfig = {
     	kdePackages.qt6ct             
 	kdePackages.knewstuff
 	kdePackages.kirigami
+	discord
   ];
 
   fonts.packages = with pkgs; [
