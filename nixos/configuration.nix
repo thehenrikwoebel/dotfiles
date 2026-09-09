@@ -226,7 +226,6 @@ systemd.services.greetd.serviceConfig = {
 	docker
 	lazydocker
 	thunderbird
-	vscode
 	libreoffice
 	python3
 	nodejs
@@ -308,6 +307,8 @@ systemd.services.greetd.serviceConfig = {
 	kdePackages.knewstuff
 	kdePackages.kirigami
 	discord
+	bruno
+	sqlite
   ];
 
   fonts.packages = with pkgs; [
