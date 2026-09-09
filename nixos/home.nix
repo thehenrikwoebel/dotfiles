@@ -9,15 +9,18 @@
     enable = true;
     profiles.default.userSettings = {
       "editor.formatOnSave" = true;
+      "python.languageServer" = "Pylance";
     };
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
-      eamodio.gitlens
-      dart-code.flutter
-      ms-python.python
-      ms-azuretools.vscode-docker
-      vscodevim.vim
-      aaron-bond.better-comments
+		ms-python.python
+		ms-python.vscode-pylance
+		aaron-bond.better-comments
+		dart-code.dart-code
+		ms-azuretools.vscode-docker
+		dart-code.flutter
+		eamodio.gitlens
+		jnoortheen.nix-ide
+		vscodevim.vim
     ];
   };
   programs.direnv = {
